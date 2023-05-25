@@ -7,7 +7,7 @@ struct segtree {
     int sz;
     segtree(int n) {
         sz = n;
-        while (__builtin_popcount(sz) ^ 1) sz++;
+        while (sz & sz - 1) ++sz;
         st.resize(sz << 1), o.resize(sz << 1, -1), t.resize(sz << 1);
     }
     void change(int v, int h, int op) {
