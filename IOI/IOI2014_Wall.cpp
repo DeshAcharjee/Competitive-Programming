@@ -1,6 +1,7 @@
+#include "wall.h"
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 struct segtree {
     vector<int> st, t, o;
     int sz;
@@ -103,18 +104,11 @@ struct segtree {
         return st[i + sz];
     }
 };
-
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    int n, k;
-    cin >> n >> k;
+ 
+void buildWall(int n, int k, int op[], int left[], int right[], int hieght[], int finalhieght[]) {
     segtree st(n);
-    for (int i = 0; i < k; i++) {
-        int op, l, r, h;
-        cin >> op >> l >> r >> h;
-        st.upd(l, r, op, h);
-    }
+    for (int i = 0; i < k; i++)
+        st.upd(left[i], right[i], op[i], hieght[i]);
     st.pushdown(1);
-    for (int i = 0; i < n; i++) cout << st.get(i) << '\n';
+    for (int i = 0; i < n; i++) finalhieght[i] = st.get(i);
 }
