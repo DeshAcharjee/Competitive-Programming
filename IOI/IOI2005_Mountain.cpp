@@ -108,7 +108,7 @@ int main() {
     while (1) {
         char c;
         cin >> c;
-        if (c == 'E') return 0;
+        if (c == 'E') break;
         if (c == 'Q') {
             int h;
             cin >> h;
