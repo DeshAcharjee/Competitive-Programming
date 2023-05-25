@@ -1,6 +1,7 @@
-#include <bits/stdc++.h>
 #include "combo.h"
+#include <bits/stdc++.h>
 using namespace std;
+
 string guess_sequence(int n) {
     char first;
     string s;
