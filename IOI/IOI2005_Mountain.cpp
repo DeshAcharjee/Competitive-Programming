@@ -73,8 +73,8 @@ struct SegmentTree {
     }
     int find_first(node* &v, int l, int r, int h) {
         if (l == r) return l;
-        int m = l + r >> 1;
         v->push(l, r);
+        int m = l + r >> 1;
         if (v->left->mx > h) return find_first(v->left, l, m, h);
         return find_first(v->right, m + 1, r, h);
     }
