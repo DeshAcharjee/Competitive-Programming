@@ -7,7 +7,7 @@ struct SegmentTree {
     int sz;
     SegmentTree(int n) {
         sz = n;
-        while (__builtin_popcount(sz) ^ 1) sz++;
+        while (sz & sz - 1) ++sz;
         tr.resize(sz << 1), lz.resize(sz << 1);
     }
     void push(int v, int l, int r) {
