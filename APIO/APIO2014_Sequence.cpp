@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 struct line {
     long long m, c;
     int id;
@@ -11,7 +11,7 @@ struct line {
         return (c - l.c) / (long double) (l.m - m);
     }
 };
-
+ 
 struct CHT {
     deque<line> cht;
     void insert(line l) {
@@ -19,10 +19,7 @@ struct CHT {
             cht.push_back(l);
             return;
         }
-        if (cht.back().m == l.m) {
-            cht.back() = l;
-            return;
-        }
+        if (cht.back().m == l.m) return;
         while (cht.size() >= 2 && cht.back().isec(*next(cht.rbegin())) >= (cht.back()).isec(l))
             cht.pop_back();
         cht.push_back(l);
@@ -33,9 +30,9 @@ struct CHT {
         return {cht[0].value(x), cht[0].id};
     }
 } cht[201];
-
+ 
 int pre[100001], par[201][100001];
-
+ 
 signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
