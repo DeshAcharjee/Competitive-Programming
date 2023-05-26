@@ -56,20 +56,13 @@ void dfs_hld(int u, int top) {
     in[u] = chains.size();
     chains.push_back(u);
     int mx = 0, mxv = -1;
-    for (int v : g[u]) {
-        if (v ^ par[u]) {
-            if (sz[v] > mx) {
-                mx = sz[v];
-                mxv = v;
-            }
-        }
-    }
+    for (int v : g[u])
+        if (v ^ par[u] && sz[v] > mx)
+           mx = sz[v], mxv = v;
     if (mx) dfs_hld(mxv, top);
-    for (int v : g[u]) {
-        if (v != par[u] && v != mxv) {
+    for (int v : g[u])
+        if (v != par[u] && v != mxv)
             dfs_hld(v, v);
-        }
-    }
 }
 
 void pathupd(int a, int b) {
