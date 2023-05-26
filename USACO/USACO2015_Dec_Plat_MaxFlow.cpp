@@ -76,10 +76,10 @@ void pathupd(int a, int b) {
     while (a ^ b) {
         int top = topofchain[a];
         if (dep[top] <= dep[b]) {
-            diff[in[b] + 1]++, diff[in[a] + 1]--;
+            ++diff[in[b] + 1], --diff[in[a] + 1];
             return;
         } else {
-            diff[in[top]]++, diff[in[a] + 1]--;
+            ++diff[in[top]], --diff[in[a] + 1];
             a = par[top];
         }
     }
@@ -89,7 +89,7 @@ void upd(int a, int b) {
     int lca = getlca(a, b);
     pathupd(a, lca);
     pathupd(b, lca);
-    diff[in[lca]]++, diff[in[lca] + 1]--;
+    ++diff[in[lca]], --diff[in[lca] + 1];
 }
 
 int main() {
@@ -103,7 +103,7 @@ int main() {
     for (int i = 0; i < n - 1; i++) {
         int u, v;
         cin >> u >> v;
-        u--, v--;
+        --u, --v;
         g[u].push_back(v);
         g[v].push_back(u);
     }
