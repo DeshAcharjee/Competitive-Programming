@@ -18,14 +18,6 @@ struct segtree {
         for (int i = sz - 1; i >= 1; i--)
             tree[i] = merge(tree[i << 1], tree[i << 1 | 1]);
     }
-    int query(int v, int l, int r, int ql, int qr) {
-        if (l > qr || r < ql)
-            return b;
-        if (l >= ql && r <= qr)
-            return tree[v];
-        int m = (l + r) >> 1;
-        return merge(query(v << 1, l, m, ql, qr), query(v << 1 | 1, m + 1, r, ql, qr));
-    }
     int find_first(int v, int l, int r, int ql, int qr, int x) {
         if (l > qr || r < ql) return -1;
         if (l >= ql && r <= qr) {
