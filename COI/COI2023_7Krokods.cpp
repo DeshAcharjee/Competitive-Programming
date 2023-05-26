@@ -24,10 +24,10 @@ void recurse(string z, int k) {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
-    int n;
-    cin >> n >> m;
     string y;
     recurse(y, 0);
+    int n;
+    cin >> n >> m;
     string r;
     cin >> r;
     int ans2 = 0;
