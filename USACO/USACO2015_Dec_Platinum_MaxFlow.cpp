@@ -61,7 +61,7 @@ void dfs_hld(int u, int top) {
            mx = sz[v], mxv = v;
     if (mx) dfs_hld(mxv, top);
     for (int v : g[u])
-        if (v != par[u] && v != mxv)
+        if (v ^ par[u] && v ^ mxv)
             dfs_hld(v, v);
 }
 
