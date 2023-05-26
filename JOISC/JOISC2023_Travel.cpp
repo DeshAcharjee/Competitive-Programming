@@ -11,7 +11,7 @@ struct segtree {
         t = tp;
         b = t ? 2e9 : -2e9;
         sz = a.size();
-        while (__builtin_popcount(sz) ^ 1) sz++;
+        while (sz & sz - 1) ++sz;
         tree.resize(sz << 1, b);
         for (int i = 0; i < a.size(); i++)
             tree[i + sz] = a[i];
