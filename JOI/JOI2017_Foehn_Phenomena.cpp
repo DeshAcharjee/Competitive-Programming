@@ -28,7 +28,7 @@ template<typename T>
         }
     };
 
-signed main() {
+int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     int n, q, s, t, p = 0;
