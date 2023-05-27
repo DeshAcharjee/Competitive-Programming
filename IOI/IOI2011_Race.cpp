@@ -61,10 +61,9 @@ void decompose(int u) {
     if (ds[k].size()) ans = min(ans, *ds[k].begin());
     for (int i : to) ds[i].clear();
     to.clear();
-    for (auto [v, w] : g[x]) {
+    for (auto [v, w] : g[x])
         if (!centroid[v])
             decompose(v);
-    }
 }
 
 int best_path(int n, int k_, int h[][2], int l[]) {
