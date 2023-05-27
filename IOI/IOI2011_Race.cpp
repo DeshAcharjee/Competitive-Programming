@@ -15,10 +15,10 @@ void calc(int u, int p) {
             calc(v, u), sz[u] += sz[v];
 }
 
-int findcentroid(int u, int p, int mx) {
+int findcentroid(int u, int p, int s) {
     for (auto [v, w] : g[u])
-        if (v ^ p && !centroid[v] && sz[v] * 2 > mx)
-            return findcentroid(v, u, mx);
+        if (v ^ p && !centroid[v] && sz[v] * 2 > s)
+            return findcentroid(v, u, s);
     return u;
 }
 
