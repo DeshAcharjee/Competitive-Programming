@@ -53,7 +53,6 @@ pair<long long, int> aliens(long long lambda) {
 
 long long take_photos(int n, int m, int k, vector<int> R, vector<int> C) {
     vector<point> f;
-    r = vector<point> ();
     for (int i = 0; i < n; i++) {
         if (R[i] > C[i]) swap(R[i], C[i]);
         f.push_back({R[i], C[i]});
