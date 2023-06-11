@@ -34,10 +34,10 @@ void dfs(int u) {
     out[u] = t++;
 }
 
-void calc_dp(int u, int p) {
+void calc_dp(int u) {
     for (int v : g[u])
-        if (v ^ p) {
-            calc_dp(v, u);
+        if (v ^ up[0][u]) {
+            calc_dp(v);
             dp2[u] += dp[v];
         }
     dp[u] = dp2[u];
@@ -86,6 +86,6 @@ int main() {
         --u, --v;
         qr[lca(u, v)].push_back({u, v, w});
     }
-    calc_dp(0, 0);
+    calc_dp(0);
     cout << dp[0] << '\n';
 }
