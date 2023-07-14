@@ -47,8 +47,9 @@ void calc_dp(int u) {
       partition(dp2[x][v], dp2[x][u], sz[u] - 1);
       swap(c, dp2[x][u]);
     }
-    for (int i = 1; i <= min(k, sz[u]); i++)
+    for (int i = 1; i <= min(k, sz[u]); i++) {
       dp2[x][u][i] = min(dp2[x][u][i], dp[u][i] - (s[u] - d[x] * w[u]));
+    }
   }
 }
 
