@@ -9,9 +9,7 @@ struct SegmentTree {
     T.resize(n << 1);
   }
   void upd(int u, int x) {
-    u += n;
-    T[u] = max(T[u], x);
-    while (u >>= 1) T[u] = max(T[u << 1], T[u << 1 | 1]);
+    for (u += n; u > 0; u >>= 1) T[u] = max(T[u], x);
   }
   void upd2(int u) {
     for (T[u += n] = 0; u >>= 1;) T[u] = max(T[u << 1], T[u << 1 | 1]);
