@@ -73,4 +73,5 @@ int main() {
         if (sf[y] != -1) pq.push({x + (long long) (sf[y] - y) * a[y], sf[y]});
     }
     cout << ans << '\n';
+    return 0;
 }
