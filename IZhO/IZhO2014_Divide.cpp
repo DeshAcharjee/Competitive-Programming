@@ -56,4 +56,5 @@ int main() {
         ans = max(ans, pre1[i] - pre1[k - 1]);
     }
     cout << ans << '\n';
+    return 0;
 }
