@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
  
 struct line {
@@ -33,7 +34,7 @@ struct CHT {
  
 int pre[100001], par[201][100001];
  
-signed main() {
+int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     int n, k;
@@ -52,6 +53,6 @@ signed main() {
         if (k >= i) cht[i].insert({pre[i], prev - (long long) pre[i] * pre[i], i});
     }
     cout << ans << '\n';
-    for (int x = par[k][n], i = k; i >= 1; i--, x = par[i][x])
-        cout << x << ' ';
+    for (int x = par[k][n], i = k; i >= 1; i--, x = par[i][x]) cout << x << ' ';
+    return 0;
 }
