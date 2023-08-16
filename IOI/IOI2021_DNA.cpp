@@ -6,7 +6,7 @@ using namespace std;
  
 vector<int> AC, AT, CA, CT, TA, TC;
  
-void init(string a,string b){
+void init(string a, string b){
     int n = a.size();
     AC = AT = CA = CT = TA = TC = vector<int> (n + 1);
     for(int i = 1; i <= n; i++) {
