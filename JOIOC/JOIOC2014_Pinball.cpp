@@ -46,14 +46,14 @@ int main() {
         return 0;
     }
     cmp.erase(unique(cmp.begin(), cmp.end()), cmp.end());
-    auto C = [&](int &x) -> void {
+    auto Compress = [&](int &x) -> void {
         x = lower_bound(cmp.begin(), cmp.end(), x) - cmp.begin();
     };
     n = cmp.size();
     SegmentTree<long long> l(n), r(n);
     long long ans = INF;
     for (auto &[a, b, c, d] : q) {
-        C(a), C(b), C(c);
+        Compress(a), Compress(b), Compress(c);
         if (!a && b == n - 1) {
             ans = min(ans, (long long) d);
         } else if (!a) {
