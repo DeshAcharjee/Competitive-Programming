@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 struct node {
@@ -105,7 +106,7 @@ int main() {
     int n;
     cin >> n;
     SegmentTree SegmentTree(n);
-    while (1) {
+    while (true) {
         char c;
         cin >> c;
         if (c == 'E') break;
@@ -121,4 +122,5 @@ int main() {
             if (r ^ n) SegmentTree.upd2(r + 1, n, SegmentTree.qry(r) - x);
         }
     }
+    return 0;
 }
