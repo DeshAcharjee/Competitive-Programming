@@ -88,4 +88,5 @@ int main() {
     }
     calc_dp(0);
     cout << dp[0] << '\n';
+    return 0;
 }
