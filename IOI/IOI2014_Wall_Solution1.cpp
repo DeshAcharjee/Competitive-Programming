@@ -1,5 +1,6 @@
 #include "wall.h"
 #include <bits/stdc++.h>
+
 using namespace std;
  
 struct segtree {
@@ -107,7 +108,11 @@ struct segtree {
  
 void buildWall(int n, int k, int op[], int left[], int right[], int height[], int finalheight[]) {
     segtree st(n);
-    for (int i = 0; i < k; i++) st.upd(left[i], right[i], op[i], height[i]);
+    for (int i = 0; i < k; i++) {
+        st.upd(left[i], right[i], op[i], height[i]);
+    }
     st.pushdown(1);
-    for (int i = 0; i < n; i++) finalheight[i] = st.get(i);
+    for (int i = 0; i < n; i++) {
+        finalheight[i] = st.get(i);
+    }
 }
